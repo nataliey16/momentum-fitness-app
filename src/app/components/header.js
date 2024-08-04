@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const BUTTON_STYLES =
-  "absolute top-3/4 hover:bg-red-50 hover:text-slate-800 left-1/2 transform -translate-x-1/2 -translate-y-[80%] bg-slate-700 text-white px-10 py-4 rounded-full";
+  "absolute top-3/4 hover:bg-[#71717a] hover:text-white left-1/2 transform -translate-x-1/2 -translate-y-[80%] bg-[#3f3f46] text-white px-10 py-4 rounded-full";
 
 const Header = () => {
   return (
