@@ -1,5 +1,6 @@
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={bebasNeue.className}>{children}</body>
+      <body className={bebasNeue.className}>
+        {" "}
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
