@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "exerciseType": "Squat",
+    "category": "Lower Body",
+    "sets": 4,
+    "repetitions": 8,
+    "Notes": "Felt Good"
+  },
+  {
+    "id": 2,
+    "exerciseType": "Lunges",
+    "category": "Lower Body",
+    "sets": 4,
+    "repetitions": 8,
+    "Notes": "Felt Good"
+  },
+  {
+    "id": 3,
+    "exerciseType": "Lunges",
+    "category": "Lower Body",
+    "sets": 4,
+    "repetitions": 8,
+    "Notes": "Felt Good"
+  },
+  {
+    "id": 4,
+    "exerciseType": "Lunges",
+    "category": "Lower Body",
+    "sets": 4,
+    "repetitions": 8,
+    "Notes": "Felt Good"
+  }
+]

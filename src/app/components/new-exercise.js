@@ -7,30 +7,45 @@ const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
 
 export const NewExercise = ({ handleAddExercise }) => {
   const [exerciseType, setExerciseType] = useState("");
-  const [category, setCategory] = useState("");
-  const [sets, setSets] = useState("");
-  const [repetitions, setRepetitions] = useState("");
+  const [category, setCategory] = useState("Core");
+  const [sets, setSets] = useState(1);
+  const [repetitions, setRepetitions] = useState(1);
   const [notes, setNotes] = useState("");
-  const [newExercise, setNewExercise] = useState([]);
+  //const [newExercise, setNewExercise] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const exercise = { exerciseType, category, sets, repetitions, notes };
+
+    //generate id for each exercise
+    const generateId = () => {
+      return Math.random().toString(36).subStr(2, 9) + Date.now().toString(36);
+    };
+
+    const exercise = {
+      id: generateId,
+      exerciseType,
+      category,
+      sets,
+      repetitions,
+      notes,
+    };
+
+    handleAddExercise(exercise);
     console.log(exercise);
 
-    //handleAddExercise(exercise);
-
-    setNewExercise(exercise); // Set the new exercise for rendering
-
+    //setNewExercise(exercise); // Set the new exercise for rendering
     setExerciseType("");
-    setCategory("");
-    setSets("");
-    setRepetitions("");
+    setCategory("Core");
+    setSets(1);
+    setRepetitions(1);
     setNotes("");
+    setIsLoading(true);
   };
 
   return (
     <div className="w-full max-w-md flex flex-col mt-10 ">
+      <h1 className="text-3xl mb-4 text-[#e4c034]">Track your Workout</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label className={LABEL_STYLES}>exercise</label>
@@ -49,10 +64,9 @@ export const NewExercise = ({ handleAddExercise }) => {
             value={category}
             required
           >
-            <option></option>
-            <option>Core</option>
-            <option>Lower Body</option>
-            <option>Upper Body</option>
+            <option value="Core">Core</option>
+            <option value="Lower Body">Lower Body</option>
+            <option value="Upper Body">Upper Body</option>
           </select>
         </div>
         <div>
@@ -91,21 +105,13 @@ export const NewExercise = ({ handleAddExercise }) => {
           ></textarea>
         </div>
         <button
-          className="bg-[#e4c034] hover:bg-[#edd993] rounded-md p-4 w-full"
+          className="bg-[#e4c034] hover:bg-[#edd993] rounded-md my-2 py-4 w-full"
           onClick={() => handleSubmit}
+          disabled={isLoading}
         >
-          Add exercise
+          {isLoading ? <p>Loading...</p> : <p> Add exercise</p>}
         </button>{" "}
       </form>
-      {newExercise && (
-        <Exercise
-          exerciseType={newExercise.exerciseType}
-          category={newExercise.category}
-          sets={newExercise.sets}
-          repetitions={newExercise.repetitions}
-          notes={newExercise.notes}
-        />
-      )}{" "}
     </div>
   );
 };
