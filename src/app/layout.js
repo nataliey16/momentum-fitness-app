@@ -1,6 +1,7 @@
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { AuthContextProvider } from "./_utils/auth-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={bebasNeue.className}>
         {" "}
-        <Navbar />
-        {children}
+          <AuthContextProvider>
+            <Navbar />
+            {children}
+          </AuthContextProvider>
       </body>
     </html>
   );

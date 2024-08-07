@@ -23,7 +23,7 @@ const Header = () => {
           Fuel Your Fitness Journey
         </h3>{" "}
       </div>
-      <Link href="/" className={BUTTON_STYLES}>
+      <Link href="/signup-page" className={BUTTON_STYLES}>
         Get Started
       </Link>
     </div>
