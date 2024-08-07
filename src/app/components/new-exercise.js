@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Exercise from "./exercise";
-import ExerciseFormData from "../components/exercises.json";
 import { useRouter } from "next/navigation";
 
 const LABEL_STYLES = "text-white text-lg my-4";
@@ -9,12 +7,6 @@ const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
 
 export const NewExercise = () => {
   const router = useRouter();
-  // const [exerciseType, setExerciseType] = useState("");
-  // const [category, setCategory] = useState("Core");
-  // const [sets, setSets] = useState(1);
-  // const [repetitions, setRepetitions] = useState(1);
-  // const [notes, setNotes] = useState("");
-  // //const [newExercise, setNewExercise] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [exerciseFormData, setExerciseFormData] = useState({
     exerciseType: "",
@@ -23,10 +15,6 @@ export const NewExercise = () => {
     repetitions: 1,
     notes: "",
   });
-
-  // const handleAddExercise = (addExercise) => {
-  //   setExerciseFormData((prevExercises) => [...prevExercises, addExercise]);
-  // };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -62,35 +50,9 @@ export const NewExercise = () => {
       repetitions: 1,
       notes: "",
     });
+
     setIsLoading(false);
   };
-
-  // //generate id for each exercise
-  // const generateId = () => {
-  //   return (
-  //     Math.random().toString(36).subStr(2, 9) + Date.now().toString(36)
-  //   );
-  // };
-
-  // const addExercise = {
-  //   id: generateId,
-  //   exerciseType,
-  //   category,
-  //   sets,
-  //   repetitions,
-  //   notes,
-  // };
-
-  // handleAddExercise(addExercise);
-  // console.log(exercise);
-
-  // //setNewExercise(exercise); // Set the new exercise for rendering
-  // setExerciseType("");
-  // setCategory("Core");
-  // setSets(1);
-  // setRepetitions(1);
-  // setNotes("");
-  // setIsLoading(true);
 
   return (
     <div className="w-full max-w-md flex flex-col mt-10 ">
@@ -158,6 +120,8 @@ export const NewExercise = () => {
             name="notes"
             value={exerciseFormData.notes}
             onChange={(e) => handleChange(e)}
+            required
+            rows="5"
           ></textarea>
         </div>
         <button

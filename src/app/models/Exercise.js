@@ -18,9 +18,9 @@ const exerciseSchema = new Schema(
       type: Number,
       required: true,
     },
-
     notes: {
-      notes: String,
+      type: String,
+      required: true,
     },
   },
   {
