@@ -2,23 +2,26 @@ import mongoose, { Schema } from "mongoose";
 
 const exerciseSchema = new Schema(
   {
-    exerciseType: String,
-    required: true,
-  },
-  {
-    category: String,
-    required: true,
-  },
-  {
-    sets: Number,
-    required: true,
-  },
-  {
-    repetitions: Number,
-    required: true,
-  },
-  {
-    notes: String,
+    exerciseType: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    sets: {
+      type: Number,
+      required: true,
+    },
+    repetitions: {
+      type: Number,
+      required: true,
+    },
+
+    notes: {
+      notes: String,
+    },
   },
   {
     timestamps: true,
