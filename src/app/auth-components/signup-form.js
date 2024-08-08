@@ -81,6 +81,11 @@ const SignUpForm = () => {
                             required />
                     </div>
                     <button className={BUTTON_STYLE} type="submit">Sign Up</button>
+                        <div className="my-4 flex items-center justify-center text-white">
+                        <span className="border-b border-white w-1/5"></span>
+                        <span className="mx-2">or</span>
+                        <span className="border-b border-white w-1/5"></span>
+                    </div>
                     <button className={BUTTON_STYLE} onClick={handleSignUpWithGitHub}>Sign In with GitHub</button>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 "use client";
  
 import { useContext, createContext, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
   signInWithPopup,
   signOut,
@@ -15,6 +16,7 @@ const AuthContext = createContext();
  
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const router = useRouter();
  
   const gitHubSignIn = () => {
     const provider = new GithubAuthProvider();
@@ -36,9 +38,12 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+        router.push("/tracker");
+      }
     });
     return () => unsubscribe();
-  }, [user]);
+  }, [router]);
  
   return (
     <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut, firebaseSignIn, firebaseSignUp }}>

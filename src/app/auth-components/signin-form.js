@@ -15,7 +15,7 @@ const SignInForm = () => {
     e.preventDefault();
     try {
       await firebaseSignIn(email, password);
-      alert("Sign-Up Successful!");
+      alert("Sign-In Successful!");
     } catch (error) {
       console.error("Error signing up:", error);
     }
@@ -59,6 +59,11 @@ const SignInForm = () => {
         </div>
         <button type="submit" className={BUTTON_STYLE} >Sign In</button>
       </form>
+      <div className="my-4 flex items-center justify-center text-white">
+        <span className="border-b border-white w-1/5"></span>
+        <span className="mx-2">or</span>
+        <span className="border-b border-white w-1/5"></span>
+      </div>
       <button onClick={handleSignInWithGitHub} className={BUTTON_STYLE}>Sign In With GitHub</button>
     </div>
   );
