@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link href="/">Momentum</Link>
         <span className="flex flex-row gap-6">
           <Link href="/tracker">Track Your Workout</Link>
-          <button>Sign in</button>
+          <Link href="/signup-page">Sign In</Link>
         </span>
       </div>
     </header>

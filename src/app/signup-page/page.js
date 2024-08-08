@@ -11,17 +11,16 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">
-        {isSignUp ? "Sign Up" : "Sign In"}
-      </h1>
-      {isSignUp ? <SignUpForm /> : <SignInForm />}
-      <button
-        onClick={toggleForm}
-        className="mt-4 p-2 bg-blue-500 text-white rounded"
-      >
-        {isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
-      </button>
+    <div className="flex bg-[#292524] justify-center items-center min-h-screen p-6">
+      <div className="w-full max-w-md flex flex-col mt-10 p-8 bg-[#362F2E] rounded-lg shadow-lg">
+        {isSignUp ? <SignInForm /> : <SignUpForm />}
+        <button
+          onClick={toggleForm}
+          className="mt-4 p-2 text-white rounded hover:text-[#e4af00]"
+        >
+          {isSignUp ? "Don't have an account? Sign Up" : "Already have an account? Sign In"}
+        </button>
+      </div>
     </div>
   );
 };
