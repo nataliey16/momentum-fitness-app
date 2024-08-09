@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="h-screen w-full grid grid-cols-2 items-center">
       {" "}
-      <div className="flex-1 bg-[#e4c034]">
+      <div className="flex-1 bg-[#e4c034]"> 
         <h1 className="text-[#292524] text-9xl flex min-h-screen items-center justify-end p-0">
           Mome
         </h1>
