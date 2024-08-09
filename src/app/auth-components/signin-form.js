@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
 const LABEL_STYLES = "text-white text-lg my-4";
-const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
+const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241] normal-case";
 const BUTTON_STYLE = "mt-4 p-4 w-full rounded-md bg-[#e4c034] text-white hover:bg-[#e4af00]";
 
 const SignInForm = () => {
@@ -39,6 +39,8 @@ const SignInForm = () => {
           <label className={LABEL_STYLES}>Email Address</label>
           <input
             className={INPUT_STYLE}
+            id="email"
+            name="email"
             type="email"
             placeholder="Email Address"
             value={email}
@@ -50,6 +52,8 @@ const SignInForm = () => {
           <label className={LABEL_STYLES}>Password</label>
           <input
             className={INPUT_STYLE}
+            id="password"
+            name="password"
             type="password"
             placeholder="Password"
             value={password}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
 const LABEL_STYLES = "text-white text-lg my-4";
-const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
+const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241] normal-case";
 const BUTTON_STYLE = "mt-4 p-4 w-full rounded-md bg-[#e4c034] text-white hover:bg-[#e4af00]";
 
 const SignUpForm = () => {
@@ -43,6 +43,8 @@ const SignUpForm = () => {
                         <input
                             className={INPUT_STYLE}
                             type="text"
+                            id="firstName"
+                            name="firstName"
                             placeholder="First Name"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
@@ -54,6 +56,8 @@ const SignUpForm = () => {
                         <input
                             className={INPUT_STYLE}
                             type="text"
+                            id="lastName"
+                            name="lastName"
                             placeholder="Last Name"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
@@ -65,6 +69,8 @@ const SignUpForm = () => {
                         <input
                             className={INPUT_STYLE}
                             type="email"
+                            id="email"
+                            name="email"
                             placeholder="Email Address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -75,6 +81,8 @@ const SignUpForm = () => {
                         <label className={LABEL_STYLES}>Password</label>
                         <input className={INPUT_STYLE}
                             type="password"
+                            id="password"
+                            name="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
