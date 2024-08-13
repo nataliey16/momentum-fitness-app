@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="flex py-4 px-10 justify-between items-center text-lg  font-bold text-white">
         <Link href="/">Momentum</Link>
         <span className="flex flex-row gap-6">
-          <Link href="/tracker">Track Your Workout</Link>
+          {user && <Link href="/tracker">Track Your Workout</Link>}
           {user ? (
             <button onClick={handleSignOut}>Sign Out</button>
           ) : (
