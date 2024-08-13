@@ -2,7 +2,7 @@ import ExerciseCard from "./exercise-card";
 const getExercises = async () => {
   try {
     const res = await fetch(
-      "http://https://momentum-fitness-e1wui3s3s-natalies-projects-c35c4871.vercel.app//api/Exercise",
+      "http://momentum-fitness-e1wui3s3s-natalies-projects-c35c4871.vercel.app//api/Exercise",
       {
         cache: "no-store",
       }
