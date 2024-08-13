@@ -17,7 +17,7 @@ const Navbar = () => {
     } catch (error) {
       console.error("Error signing out:", error);
     }
-  }
+  };
 
   return (
     <header className="lg:fixed w-full top-0  px-10 z-50 sm:mt-6">

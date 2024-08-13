@@ -7,7 +7,6 @@ const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
 
 export const NewExercise = () => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
   const [exerciseFormData, setExerciseFormData] = useState({
     exerciseType: "",
     category: "Core",
@@ -50,8 +49,6 @@ export const NewExercise = () => {
       repetitions: 1,
       notes: "",
     });
-
-    setIsLoading(false);
   };
 
   return (
@@ -127,9 +124,8 @@ export const NewExercise = () => {
         <button
           className="bg-[#e4c034] hover:bg-[#edd993] rounded-md my-2 py-4 w-full"
           onClick={() => handleSubmit}
-          disabled={isLoading}
         >
-          {isLoading ? <p>Loading...</p> : <p> Add exercise</p>}
+          <p> Add exercise</p>
         </button>{" "}
       </form>
     </div>

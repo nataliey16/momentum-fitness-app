@@ -24,7 +24,7 @@ const ExerciseList = async () => {
           <h1 className="text-white my-4 text-center text-3xl">Your workout</h1>
           <div className="grid grid-cols-4">
             {exercises.map((exercise, index) => (
-              <ExerciseCard id={index} key={index} exercise={exercise} />
+              <ExerciseCard key={index} exercise={exercise} />
             ))}
           </div>
         </div>
