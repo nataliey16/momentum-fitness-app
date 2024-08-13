@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
 
 const LABEL_STYLES = "text-white text-lg my-4";
-const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241] normal-case";
+const INPUT_STYLE = "w-full p-4 mx-0 my-2 rounded-md border-2 border-[#293241]";
 const BUTTON_STYLE = "mt-4 p-4 w-full rounded-md bg-[#e4c034] text-white hover:bg-[#e4af00]";
 
 const SignInForm = () => {
@@ -29,7 +29,7 @@ const SignInForm = () => {
     } catch (error) {
       console.error("Error signing in with GitHub:", error);
     }
-  }
+  };
 
   return (
     <div>
@@ -61,14 +61,18 @@ const SignInForm = () => {
             required
           />
         </div>
-        <button type="submit" className={BUTTON_STYLE} >Sign In</button>
+        <button type="submit" className={BUTTON_STYLE}>
+          Sign In
+        </button>
       </form>
       <div className="my-4 flex items-center justify-center text-white">
         <span className="border-b border-white w-1/5"></span>
         <span className="mx-2">or</span>
         <span className="border-b border-white w-1/5"></span>
       </div>
-      <button onClick={handleSignInWithGitHub} className={BUTTON_STYLE}>Sign In With GitHub</button>
+      <button onClick={handleSignInWithGitHub} className={BUTTON_STYLE}>
+        Sign In With GitHub
+      </button>
     </div>
   );
 };

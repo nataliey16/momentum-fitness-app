@@ -55,7 +55,7 @@ export const NewExercise = () => {
   };
 
   return (
-    <div className="w-full max-w-md flex flex-col mt-10 ">
+    <div className="w-full max-w-md flex flex-col my-10 p-8 bg-[#362F2E] rounded-lg shadow-lg">
       <h1 className="text-3xl text-center mb-4 text-[#e4c034]">
         Track your Workout
       </h1>
